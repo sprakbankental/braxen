@@ -1,16 +1,20 @@
 # Braxen 1.0
 
-This is the public repository for Braxen, software and data for 
-Swedish pronunciations for speech science and speech technology.
+This is the public repository for **Braxen**, 
+a software and dataset providing Swedish pronunciations for 
+speech science and speech technology.
 
-Beware that this is a first release of Braxen. 
-The resource will be developed, and 
-the main resource is continuously refined and updated.
-For future proofing, consider putting a download and
-transformation in your pipeline, to ensure access to updates.
+Please note that this is the first release of Braxen. 
+The resource is under active development and will be 
+continuously refined and updated.
 
-- Documentation is found under `/docs`
-- The lexicon resource itself is found under `/dict`
-- Validation and conversion scripts are in ``/p5m/scripts`
- 
+To future-proof your workflow, consider incorporating 
+an automated download and transformation process to 
+ensure access to updates.
 
+- Documentation can be found in 
+`/docs`.
+- The lexicon resource is located in 
+`/dict`.
+- Validation and conversion scripts are available in 
+`/p5m/scripts`.
