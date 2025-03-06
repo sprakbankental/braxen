@@ -1,4 +1,4 @@
-<img src="docs/images/logos/1;logo-braxen.svg" width="150" align="right">
+<img src="docs/images/logos/logo-braxen.svg" width="150" align="right">
 
 # Braxen 1.0
 
