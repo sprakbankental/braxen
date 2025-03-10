@@ -1,8 +1,8 @@
 = Braxen 1.0 Documentation
 
 :author: Swedish Agency for Accessible Media (MTM)
-:license: CC BY 4.0
-:url-license: https://creativecommons.org/licenses/by/4.0/legalcode.en
+:license: Apache 2.0
+:url-license: https://www.apache.org/licenses/LICENSE-2.0
 // Local variables
 :braxen: Braxen 1.0
 :mtm-1st: Swedish Agency for Accessible Media (MTM)
@@ -48,7 +48,7 @@ In its raw, tab-separated form, each field occupies a column, and
 the order is meaningful, so that columns 0 to 26 have semantics. 
 
 In the current version, only a subset of these fields are shared publicly.
-The structure of the public dictionary remains the same, hwoever, 
+The structure of the public dictionary remains the same, however, 
 resulting in a number of empty columns
 (see <<_appendix_a_field_information>>).
 
@@ -65,7 +65,7 @@ different casings can sometimes indicate different pronunciations (see <<_16_cas
 .Examples
 [cols="1,1,1", options="header"]
 |===
-| Orthography | Part of Speech | Pronunciation
+| Orthography | Part of Speech | Transcription
 | björn | Noun | /b j ’oe: rn/
 | Björn | Proper name | /b j ’oe: rn/
 | BrB | Proper name (abbreviation) | Brottsbalken
@@ -88,14 +88,21 @@ Tools for automatic conversion are included in the
 [cols="1,1", options="header"]
 |===
 | Script | Task
-| convertBase2IPA.pl | Converts {format-base} to IPA
-| convertIPA2Base.pl | Converts IPA to {format-base}
-| validateBase.pl | Validates {format-base} transcription
-| validateIPA.pl | Validates IPA transcription
+| p5m/scripts/braxen_conversion.pl | Converts {format-base} to IPA
+| validate_braxen.pl | Validates {format-base} transcription
+| validate_ipa.pl | Validates IPA transcription
 |===
 
 Note that the conversion tools are written in Perl.
 Using e.g. Docker, they can be used without installing a Perl interpreter.
+
+.Example of conversion using Docker
+Use "encode" for Braxen to IPA format and "decode" for IPA to Braxen format.
+[source,bash]
+----
+cd /braxen/repo/root
+docker run -v "$PWD":/work -it perl -c "/work/p5m/scripts/braxen_conversion.pl ENCODE|DECODE /work/INFILE /work/OUTFILE"
+----
 
 .Example of validation using Docker
 [source,bash]
@@ -107,7 +114,7 @@ OUTFILE"
 
 === Stress
 
-All {braxen}} words have exactly one main stress, 
+All {braxen} words have exactly one main stress, 
 which can be either accent 1 or accent 2. 
 Words with accent 2 also have secondary stress. 
 Stress is marked immediately before the stressed vowel.
@@ -115,10 +122,10 @@ Stress is marked immediately before the stressed vowel.
 .Stress notation examples
 [cols="1,1,1", options="header"]
 |===
-| Stress | Notation | Example (Transcription)
-| Main stress, accent 1 | ’ | boll (/b ’o l/)
-| Main stress, accent 2 | ” | bollar, dalbana (/b ”o . l ,a r/, /d ”a: l - b ,a: . n a/)
-| Secondary stress | , | bollar, dalbana (/b ”o . l ,a r/, /d ”a: l - b ,a: . n a/)
+| Stress | Notation | Example | Transcription
+| Main stress, accent 1 | ’ | boll | /b ’o l/
+| Main stress, accent 2 | ” | bollar, dalbana | /b ”o . l ,a r/, /d ”a: l - b ,a: . n a/
+| Secondary stress | , | bollar, dalbana | /b ”o . l ,a r/, /d ”a: l - b ,a: . n a/
 |===
 
 === Boundaries
@@ -128,11 +135,11 @@ Word boundaries allow multiple main stresses within an expression.
 .Word boundary examples
 [cols="1,1,1", options="header"]
 |===
-| Boundary | Notation | Example (Transcription)
-| Word | `|` | berg- och dalbana (/b ’ae rj | ’o: | d ”a: l - b , a: . n a/)
-| Compound | `-` | dalbana (/d ”a: l - b ,a: . n a/)
-| Morpheme* | `~` | transalpin (/t r a n s ~ a l . p 'i: n/)
-| Syllable | `.` | alpin (/a l . p ’i: n/)
+| Boundary | Notation | Example | Transcription
+| Word | `|` | berg- och dalbana | /b ’ae rj `|` ’o: `|` d ”a: l - b , a: . n a/
+| Compound | `-` | dalbana | /d ”a: l - b ,a: . n a/
+| Morpheme* | `~` | transalpin | /t r a n s ~ a l . p 'i: n/
+| Syllable | `.` | alpin | /a l . p ’i: n/
 |===
 
 *The morpheme boundary is optional but can be included when needed.
@@ -145,11 +152,11 @@ mainly reflecting a central Swedish pronunciation.
 ./e/ pronunciations
 [cols="1,2,2", options="header"]
 |===
-| Phoneme | Description | Example (Transcription)
+| Phoneme | Description | Example | Transcription
 | `e` | Semi-open /e/ sound | sett (/s ’e t/)
-| `ä` | Semi-open /e/ sound (dialectal variation) | sätt (/s ’ä t/)
-| `eh` | Before stressed syllable in unstressed, open syllable | betona (/b eh . t ’u: . n a/)
-| `ex` | Schwa, used in unstressed syllables | bollen (/b ’o . l ex n/)
+| `ä` | Semi-open /e/ sound (dialectal variation) | sätt | /s ’ä t/
+| `eh` | Before stressed syllable in unstressed, open syllable | betona | /b eh . t ’u: . n a/
+| `ex` | Schwa, used in unstressed syllables | bollen | /b ’o . l ex n/
 |===
 
 === Xenophones (foreign speech sounds)
@@ -170,7 +177,7 @@ the same orthographic form can lead to different pronunciations:
 .Part of speech and pronunciation examples
 [cols="1,1,1", options="header"]
 |===
-| Orthography | Part of Speech | Pronunciation
+| Orthography | Part of Speech | Transcription
 | slutet | NN | /s l ’uu: . t ex t/
 | slutet | JJ | /s l ”uu: . t ,ex t/
 | planet | NN UTR SIN IND NOM | /p l a . n ’e: t/
@@ -189,7 +196,7 @@ the time of pronunciation creation.
 .Examples of different language codes for the same word
 [cols="1,1,1", options="header"]
 |===
-| Orthography | Language Code | Pronunciation
+| Orthography | Language Code | Transcription
 | Anne | swe | /’a n/
 | Anne | eng | /’ae n/
 |===
