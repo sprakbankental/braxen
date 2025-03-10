@@ -1,3 +1,4 @@
+image::../images/logos/logo-braxen.svg[alt="Braxen logo", width="200", float="right"]
 = Braxen 1.0 Documentation
 
 :author: Swedish Agency for Accessible Media (MTM)
@@ -23,6 +24,7 @@
 :field-26-full: {field} 26: {field-26}
 
 :format-base: Base
+
 
 // 1st para wIll be formatted as abstract by default
 {braxen} is a Swedish pronunciation dictionary for speech technology, 
