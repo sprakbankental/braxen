@@ -80,13 +80,13 @@ For example, the most frequent casing is used, as
 different casings can sometimes indicate different pronunciations (see <<_field_16, {field-16-full}>>).
 
 .Examples
-[cols="1,1,1", options="header"]
+[format=tsv, cols="1,1,1", options="header"]
 |===
-| Orthography | Part of Speech | Transcription
-| björn | Noun | /b j ’oe: rn/
-| Björn | Proper name | /b j ’oe: rn/
-| BrB | Proper name (abbreviation) | Brottsbalken
-| BRB | Proper name (acronym) | B R B
+Orthography	Part of Speech	Transcription
+björn	Noun	/b j ’oe: rn/
+Björn	Proper name	/b j ’oe: rn/
+BrB	Proper name (abbreviation)	Brottsbalken
+BRB	Proper name (acronym)	B R B
 |===
 
 === [[_field_1]]{field-1-full}
@@ -102,12 +102,12 @@ Tools for automatic conversion are included in the
 
 
 .Conversion Tools
-[cols="1,1", options="header"]
+[format=tsv, cols="1,1", options="header"]
 |===
-| Script | Task
-| p5m/scripts/braxen_conversion.pl | Converts {format-base} to IPA
-| validate_braxen.pl | Validates {format-base} transcription
-| validate_ipa.pl | Validates IPA transcription
+Script,Task
+p5m/scripts/braxen_conversion.pl	Converts {format-base} to IPA
+validate_braxen.pl	Validates {format-base} transcription
+validate_ipa.pl	Validates IPA transcription
 |===
 
 Note that the conversion tools are written in Perl.
@@ -137,26 +137,27 @@ Words with accent 2 also have secondary stress.
 Stress is marked immediately before the stressed vowel.
 
 .Stress notation examples
-[cols="1,1,1", options="header"]
+[format=tsv, cols="2,1,2,3", options="header"]
 |===
-| Stress | Notation | Example | Transcription
-| Main stress, accent 1 | ’ | boll | /b ’o l/
-| Main stress, accent 2 | ” | bollar, dalbana | /b ”o . l ,a r/, /d ”a: l - b ,a: . n a/
-| Secondary stress | , | bollar, dalbana | /b ”o . l ,a r/, /d ”a: l - b ,a: . n a/
+Stress	Notation	Example	Transcription
+Main stress accent 1	’	boll	/b ’o l/
+Main stress accent 2	”	bollar, dalbana	/b ”o . l ,a r/, /d ”a: l - b ,a: . n a/
+Secondary stress	,	bollar, dalbana	/b ”o . l ,a r/, /d ”a: l - b ,a: . n a/
 |===
+
 
 ==== Boundaries
 
 Word boundaries allow multiple main stresses within an expression. 
 
 .Word boundary examples
-[cols="1,1,1", options="header"]
+[format=tsv, cols="2,1,2,3", options="header"]
 |===
-| Boundary | Notation | Example | Transcription
-| Word | `|` | berg- och dalbana | /b ’ae rj `|` ’o: `|` d ”a: l - b , a: . n a/
-| Compound | `-` | dalbana | /d ”a: l - b ,a: . n a/
-| Morpheme* | `~` | transalpin | /t r a n s ~ a l . p 'i: n/
-| Syllable | `.` | alpin | /a l . p ’i: n/
+Boundary	Notation	Example	Transcription
+Word	`|`	berg- och dalbana	/b ’ae rj `|` ’o: `|` d ”a: l - b , a: . n a/
+Compound	`-`	dalbana	/d ”a: l - b ,a: . n a/
+Morpheme*	`~`	transalpin	/t r a n s ~ a l . p 'i: n/
+Syllable	`.`	alpin	/a l . p ’i: n/
 |===
 
 *The morpheme boundary is optional but can be included when needed.
@@ -167,13 +168,13 @@ Word boundaries allow multiple main stresses within an expression.
 mainly reflecting a central Swedish pronunciation.
 
 ./e/ pronunciations
-[cols="1,2,2", options="header"]
+[format=tsv, cols="1,2,2", options="header"]
 |===
-| Phoneme | Description | Example | Transcription
-| `e` | Semi-open /e/ sound | sett (/s ’e t/)
-| `ä` | Semi-open /e/ sound (dialectal variation) | sätt | /s ’ä t/
-| `eh` | Before stressed syllable in unstressed, open syllable | betona | /b eh . t ’u: . n a/
-| `ex` | Schwa, used in unstressed syllables | bollen | /b ’o . l ex n/
+Phoneme	Description	Example	Transcription
+`e`	Semi-open /e/ sound	sett (/s ’e t/)
+`ä`	Semi-open /e/ sound (dialectal variation)	sätt	/s ’ä t/
+`eh`	Before stressed syllable in unstressed, open syllable	betona	/b eh . t ’u: . n a/
+`ex`	Schwa, used in unstressed syllables	bollen	/b ’o . l ex n/
 |===
 
 ==== Xenophones (foreign speech sounds)
@@ -192,13 +193,13 @@ Different parts of speech or morphological information for
 the same orthographic form can lead to different pronunciations:
 
 .Part of speech and pronunciation examples
-[cols="1,1,1", options="header"]
+[format=tsv, cols="1,1,1", options="header"]
 |===
-| Orthography | Part of Speech | Transcription
-| slutet | NN | /s l ’uu: . t ex t/
-| slutet | JJ | /s l ”uu: . t ,ex t/
-| planet | NN UTR SIN IND NOM | /p l a . n ’e: t/
-| planet | NN NEU SIN DEF NOM | /p l ’a: . n ex t/
+Orthography	Part of Speech	Transcription
+slutet	NN	/s l ’uu: . t ex t/
+slutet	JJ	/s l ”uu: . t ,ex t/
+planet	NN UTR SIN IND NOM	/p l a . n ’e: t/
+planet	NN NEU SIN DEF NOM	/p l ’a: . n ex t/
 |===
 
 <<_app_c, {app-c-full}>>
@@ -211,11 +212,11 @@ The language code indicates the intended language of the orthography at
 the time of pronunciation creation.
 
 .Examples of different language codes for the same word
-[cols="1,1,1", options="header"]
+[format=tsv, cols="1,1,1", options="header"]
 |===
-| Orthography | Language Code | Transcription
-| Anne | swe | /’a n/
-| Anne | eng | /’ae n/
+Orthography	Language Code	Transcription
+Anne	swe	/’a n/
+Anne	eng	/’ae n/
 |===
 
 <<_app_d, {app-d-full}>>
@@ -224,6 +225,7 @@ provides a list of selected language codes.
 === [[_field_16]]{field-16-full}
 
 This field indicates case sensitivity:
+
 - `1` = Case-sensitive
 - `0` = Not case-sensitive
 
@@ -241,15 +243,17 @@ An internal identifier for each entry.
 
 Bold fields are shared publicly.
 
-[cols="1,2,2", options="header"]
+[format=tsv, cols="2,1,2", options="header"]
 |===
-| Field | Name | Example
-| 0 | orth | bjärornas
-| 1 | pron | b j ”ae: . r ,u . rn a s
-| 2 | posmorph | NN UTR PLU DEF GEN
-| 3 | lang | swe
-| 16 | case | 0
-| 26 | id | 0060097
+Field	Name	Example
+*0*	orth	bjärornas
+*1*	pron	b j ”ae: . r ,u . rn a s
+*2*	posmorph	NN UTR PLU DEF GEN
+*3*	lang	swe
+4-15	internal	-
+*16*	case	0
+17-25	internal	-
+*26*	id	0060097
 |===
 
 === [[_app_b]]{app-b-full}
