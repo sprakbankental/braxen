@@ -435,39 +435,85 @@ body.book #toc,body.book #preamble,body.book h1.sect0,body.book .sect1>h2{page-b
 #footer-text{color:rgba(0,0,0,.6);font-size:.9em}}
 @media amzn-kf8{#header,#content,#footnotes,#footer{padding:0}}
 </style>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.18.3/styles/github.min.css">
 </head>
-<body class="article">
+<body class="article toc2 toc-left">
 <div id="header">
-<h1>Braxen 1.0 Documentation</h1>
+<div id="toc" class="toc2">
+<div id="toctitle">Table of Contents</div>
+<ul class="sectlevel1">
+<li><a href="#_braxen_1_0_documentation">Braxen 1.0 Documentation</a>
+<ul class="sectlevel2">
+<li><a href="#_structure">Structure</a>
+<ul class="sectlevel3">
+<li><a href="#_entries">Entries</a></li>
+<li><a href="#_field_structure">Field structure</a></li>
+</ul>
+</li>
+<li><a href="#_field_0_orthography">Field 0: Orthography</a></li>
+<li><a href="#_field_1_pronunciation">Field 1: Pronunciation</a>
+<ul class="sectlevel3">
+<li><a href="#_stress">Stress</a></li>
+<li><a href="#_boundaries">Boundaries</a></li>
+<li><a href="#_e_sounds">/e/ Sounds</a></li>
+<li><a href="#_xenophones_foreign_speech_sounds">Xenophones (foreign speech sounds)</a></li>
+</ul>
+</li>
+<li><a href="#_field_2_part_of_speech_and_morphology">Field 2: Part of speech and morphology</a></li>
+<li><a href="#_field_3_language_code">Field 3: Language code</a></li>
+<li><a href="#_field_16_case">Field 16: Case</a></li>
+<li><a href="#_field_26_id">Field 26: ID</a></li>
+<li><a href="#_references">References</a></li>
+<li><a href="#_appendix_a_field_information">Appendix A: Field information</a></li>
+<li><a href="#_appendix_b_phoneme_table_base_and_ipa">Appendix B: Phoneme table - Base and IPA</a></li>
+<li><a href="#_appendix_c_part_of_speech">Appendix C: Part of speech</a></li>
+<li><a href="#_appendix_d_language_codes">Appendix D: Language codes</a></li>
+</ul>
+</li>
+</ul>
+</div>
 </div>
 <div id="content">
-<div id="preamble">
+<div class="imageblock right">
+<div class="content">
+<img src="../images/logos/logo-braxen.svg" alt="logo braxen" width="100">
+</div>
+</div>
+<div class="imageblock right">
+<div class="content">
+<img src="../images/logos/logo-braxen.svg" alt="logo braxen" width="100">
+</div>
+</div>
+<div class="imageblock right">
+<div class="content">
+<img src="../images/logos/logo-braxen.svg" alt="logo braxen" width="100">
+</div>
+</div>
+<div class="sect1">
+<h2 id="_braxen_1_0_documentation">Braxen 1.0 Documentation</h2>
 <div class="sectionbody">
-<div class="paragraph">
+<div class="paragraph lead">
 <p>Braxen 1.0 is a Swedish pronunciation dictionary for speech technology,
 developed by Swedish Agency for Accessible Media (MTM).
 It is made public in cooperation with Språkbanken Tal.</p>
 </div>
-</div>
-</div>
-<div class="sect1">
-<h2 id="_structure">Structure</h2>
-<div class="sectionbody">
+<div class="sect2">
+<h3 id="_structure">Structure</h3>
 <div class="paragraph">
 <p>The underlying data for Braxen 1.0 is a straight-forward two-dimensional table, with
 entries for full-form words, abbreviations, and acronyms, and
 columns (Fields) for various attributes of these entries.</p>
 </div>
-<div class="sect2">
-<h3 id="_entries">Entries</h3>
+<div class="sect3">
+<h4 id="_entries">Entries</h4>
 <div class="paragraph">
 <p>An entry in Braxen 1.0 is defined by its full-form orthography,
 and several entries with the same orthography is permissable, but
 only if they differ in another field.</p>
 </div>
 </div>
-<div class="sect2">
-<h3 id="_field_structure">Field structure</h3>
+<div class="sect3">
+<h4 id="_field_structure">Field structure</h4>
 <div class="paragraph">
 <p>An entry in Braxen 1.0 consists of 27 fields.
 In its raw, tab-separated form, each field occupies a column, and
@@ -475,26 +521,24 @@ the order is meaningful, so that columns 0 to 26 have semantics.</p>
 </div>
 <div class="paragraph">
 <p>In the current version, only a subset of these fields are shared publicly.
-The structure of the public dictionary remains the same, hwoever,
+The structure of the public dictionary remains the same, however,
 resulting in a number of empty columns
-(see <a href="#_appendix_a_field_information">Appendix A: Field Information</a>).</p>
+(see <a href="#_app_a">Appendix A: Field information</a>).</p>
 </div>
 <div class="paragraph">
 <p>The most important fields are described in the following.</p>
 </div>
 </div>
 </div>
-</div>
-<div class="sect1">
-<h2 id="_field_0_orthography">Field 0: Orthography</h2>
-<div class="sectionbody">
+<div class="sect2">
+<h3 id="_field_0_orthography"><a id="_field_0"></a>Field 0: Orthography</h3>
 <div class="paragraph">
 <p>The orthography field shows the spelling of the word.</p>
 </div>
 <div class="paragraph">
 <p>A considerable amount of pragmatics goes into the orthography field.
 For example, the most frequent casing is used, as
-different casings can sometimes indicate different pronunciations (see <a href="#_16_case">[_16_case]</a>).</p>
+different casings can sometimes indicate different pronunciations (see <a href="#_field_16">Field 16: Case</a>).</p>
 </div>
 <table class="tableblock frame-all grid-all stretch">
 <caption class="title">Table 1. Examples</caption>
@@ -507,7 +551,7 @@ different casings can sometimes indicate different pronunciations (see <a href="
 <tr>
 <th class="tableblock halign-left valign-top">Orthography</th>
 <th class="tableblock halign-left valign-top">Part of Speech</th>
-<th class="tableblock halign-left valign-top">Pronunciation</th>
+<th class="tableblock halign-left valign-top">Transcription</th>
 </tr>
 </thead>
 <tbody>
@@ -534,17 +578,15 @@ different casings can sometimes indicate different pronunciations (see <a href="
 </tbody>
 </table>
 </div>
-</div>
-<div class="sect1">
-<h2 id="_field_1_pronunciation">Field 1: Pronunciation</h2>
-<div class="sectionbody">
+<div class="sect2">
+<h3 id="_field_1_pronunciation"><a id="_field_1"></a>Field 1: Pronunciation</h3>
 <div class="paragraph">
 <p>The format for the phonetic-phonological transcriptions covers
 Swedish and common foreign phonemes.
 Here, this fomat is referred to as <strong>Base</strong>.</p>
 </div>
 <div class="paragraph">
-<p><a href="#_appendix_b_phoneme_table_base_and_ipa">Appendix B: Phoneme Table (Base and IPA)</a> provides
+<p><a href="#_app_b">Appendix B: Phoneme table - Base and IPA</a> provides
 a conversion table between Base and IPA.
 Tools for automatic conversion are included in the
 <code>/p5m/scripts</code> directory).</p>
@@ -552,31 +594,32 @@ Tools for automatic conversion are included in the
 <table class="tableblock frame-all grid-all stretch">
 <caption class="title">Table 2. Conversion Tools</caption>
 <colgroup>
-<col style="width: 50%;">
-<col style="width: 50%;">
+<col style="width: 16.6666%;">
+<col style="width: 33.3333%;">
+<col style="width: 50.0001%;">
 </colgroup>
 <thead>
 <tr>
 <th class="tableblock halign-left valign-top">Script</th>
 <th class="tableblock halign-left valign-top">Task</th>
+<th class="tableblock halign-left valign-top">Call</th>
 </tr>
 </thead>
 <tbody>
 <tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">convertBase2IPA.pl</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Converts Base to IPA</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">braxen_conversion.pl</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Braxen to IPA(encode) or IPA to Braxen (decode)</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">perl p5m/scripts/braxen_conversion.pl &lt;encode|decode&gt; &lt;infile&gt; &lt;outfile&gt;</p></td>
 </tr>
 <tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">convertIPA2Base.pl</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Converts IPA to Base</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">validate_braxen.pl</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Validates Braxen</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">perl p5m/scripts/validate_braxen.pl &lt;infile&gt; &lt;outfile&gt;</p></td>
 </tr>
 <tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">validateBase.pl</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Validates Base transcription</p></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">validateIPA.pl</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Validates IPA transcription</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">validate_ipa.pl</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Validates IPA</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">perl p5m/scripts/validate_ipa.pl &lt;infile&gt; &lt;outfile&gt;</p></td>
 </tr>
 </tbody>
 </table>
@@ -584,18 +627,28 @@ Tools for automatic conversion are included in the
 <p>Note that the conversion tools are written in Perl.
 Using e.g. Docker, they can be used without installing a Perl interpreter.</p>
 </div>
+<div class="paragraph">
+<div class="title">Example of conversion using Docker</div>
+<p>Use "encode" for Braxen to IPA format and "decode" for IPA to Braxen format.</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-bash hljs" data-lang="bash">cd /braxen/repo/root
+docker run -v "$PWD":/work -it perl -c "/work/p5m/scripts/braxen_conversion.pl ENCODE|DECODE /work/INFILE /work/OUTFILE"</code></pre>
+</div>
+</div>
 <div class="listingblock">
 <div class="title">Example of validation using Docker</div>
 <div class="content">
-<pre class="highlight"><code class="language-bash" data-lang="bash">cd /braxen/repo/root
+<pre class="highlightjs highlight"><code class="language-bash hljs" data-lang="bash">cd /braxen/repo/root
 docker run -v "$PWD":/work -it perl -c "/work/p5m/scripts/validate_braxen.pl /work/INFILE /work/
 OUTFILE"</code></pre>
 </div>
 </div>
-<div class="sect2">
-<h3 id="_stress">Stress</h3>
+<div class="sect3">
+<h4 id="_stress">Stress</h4>
 <div class="paragraph">
-<p>All Braxen 1.0} words have exactly one main stress,
+<p>All Braxen 1.0 words have exactly one main stress,
 which can be either accent 1 or accent 2.
 Words with accent 2 also have secondary stress.
 Stress is marked immediately before the stressed vowel.</p>
@@ -603,80 +656,86 @@ Stress is marked immediately before the stressed vowel.</p>
 <table class="tableblock frame-all grid-all stretch">
 <caption class="title">Table 3. Stress notation examples</caption>
 <colgroup>
-<col style="width: 33.3333%;">
-<col style="width: 33.3333%;">
-<col style="width: 33.3334%;">
+<col style="width: 25%;">
+<col style="width: 12.5%;">
+<col style="width: 25%;">
+<col style="width: 37.5%;">
 </colgroup>
 <thead>
 <tr>
 <th class="tableblock halign-left valign-top">Stress</th>
 <th class="tableblock halign-left valign-top">Notation</th>
-<th class="tableblock halign-left valign-top">Example (Transcription)</th>
+<th class="tableblock halign-left valign-top">Example</th>
+<th class="tableblock halign-left valign-top">Transcription</th>
 </tr>
 </thead>
 <tbody>
 <tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Main stress, accent 1</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Main stress accent 1</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">’</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">boll (/b ’o l/)</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">boll</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">/b ’o l/</p></td>
 </tr>
 <tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Main stress, accent 2</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Main stress accent 2</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">”</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">bollar, dalbana (/b ”o . l ,a r/, /d ”a: l - b ,a: . n a/)</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">bollar, dalbana</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">/b ”o . l ,a r/, /d ”a: l - b ,a: . n a/</p></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Secondary stress</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">,</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">bollar, dalbana (/b ”o . l ,a r/, /d ”a: l - b ,a: . n a/)</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">bollar, dalbana</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">/b ”o . l ,a r/, /d ”a: l - b ,a: . n a/</p></td>
 </tr>
 </tbody>
 </table>
 </div>
-<div class="sect2">
-<h3 id="_boundaries">Boundaries</h3>
+<div class="sect3">
+<h4 id="_boundaries">Boundaries</h4>
 <div class="paragraph">
 <p>Word boundaries allow multiple main stresses within an expression.</p>
 </div>
 <table class="tableblock frame-all grid-all stretch">
 <caption class="title">Table 4. Word boundary examples</caption>
 <colgroup>
-<col style="width: 33.3333%;">
-<col style="width: 33.3333%;">
-<col style="width: 33.3334%;">
+<col style="width: 25%;">
+<col style="width: 12.5%;">
+<col style="width: 25%;">
+<col style="width: 37.5%;">
 </colgroup>
 <thead>
 <tr>
 <th class="tableblock halign-left valign-top">Boundary</th>
 <th class="tableblock halign-left valign-top">Notation</th>
-<th class="tableblock halign-left valign-top">Example (Transcription)</th>
+<th class="tableblock halign-left valign-top">Example</th>
+<th class="tableblock halign-left valign-top">Transcription</th>
 </tr>
 </thead>
 <tbody>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Word</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">`</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">`</p></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">berg- och dalbana (/b ’ae rj</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">’o:</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">d ”a: l - b , a: . n a/)</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>|</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">berg- och dalbana</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">/b ’ae rj <code>|</code> ’o: <code>|</code> d ”a: l - b , a: . n a/</p></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Compound</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><code>-</code></p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">dalbana (/d ”a: l - b ,a: . n a/)</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">dalbana</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">/d ”a: l - b ,a: . n a/</p></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Morpheme*</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><code>~</code></p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">transalpin (/t r a n s ~ a l . p 'i: n/)</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">transalpin</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">/t r a n s ~ a l . p 'i: n/</p></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Syllable</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><code>.</code></p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">alpin (/a l . p ’i: n/)</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">alpin</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">/a l . p ’i: n/</p></td>
 </tr>
 </tbody>
 </table>
@@ -684,8 +743,8 @@ Stress is marked immediately before the stressed vowel.</p>
 <p>*The morpheme boundary is optional but can be included when needed.</p>
 </div>
 </div>
-<div class="sect2">
-<h3 id="_e_sounds">/e/ Sounds</h3>
+<div class="sect3">
+<h4 id="_e_sounds">/e/ Sounds</h4>
 <div class="paragraph">
 <p>Braxen 1.0 distinguishes between four /e/ sounds,
 mainly reflecting a central Swedish pronunciation.</p>
@@ -701,45 +760,48 @@ mainly reflecting a central Swedish pronunciation.</p>
 <tr>
 <th class="tableblock halign-left valign-top">Phoneme</th>
 <th class="tableblock halign-left valign-top">Description</th>
-<th class="tableblock halign-left valign-top">Example (Transcription)</th>
+<th class="tableblock halign-left valign-top">Example</th>
 </tr>
 </thead>
 <tbody>
 <tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Transcription</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><code>e</code></p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Semi-open /e/ sound</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">sett (/s ’e t/)</p></td>
 </tr>
 <tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">sett (/s ’e t/)</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><code>ä</code></p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Semi-open /e/ sound (dialectal variation)</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">sätt (/s ’ä t/)</p></td>
 </tr>
 <tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">sätt</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">/s ’ä t/</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><code>eh</code></p></td>
+</tr>
+<tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Before stressed syllable in unstressed, open syllable</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">betona (/b eh . t ’u: . n a/)</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">betona</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">/b eh . t ’u: . n a/</p></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><code>ex</code></p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Schwa, used in unstressed syllables</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">bollen (/b ’o . l ex n/)</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">bollen</p></td>
 </tr>
 </tbody>
 </table>
 </div>
-<div class="sect2">
-<h3 id="_xenophones_foreign_speech_sounds">Xenophones (foreign speech sounds)</h3>
+<div class="sect3">
+<h4 id="_xenophones_foreign_speech_sounds">Xenophones (foreign speech sounds)</h4>
 <div class="paragraph">
 <p>The phoneme inventory includes foreign phonemes,
 so-called xenophones, primarily from English.</p>
 </div>
 </div>
 </div>
-</div>
-<div class="sect1">
-<h2 id="_field_2_part_of_speech_and_morphology">Field 2: Part of speech and morphology</h2>
-<div class="sectionbody">
+<div class="sect2">
+<h3 id="_field_2_part_of_speech_and_morphology"><a id="_field_2"></a>Field 2: Part of speech and morphology</h3>
 <div class="paragraph">
 <p>Part of speech and morphological data largely follow
 the Stockholm-Umeå Corpus (SUC) principles (Gustafson-Capková &amp; Hartmann, 2006).
@@ -761,7 +823,7 @@ the same orthographic form can lead to different pronunciations:</p>
 <tr>
 <th class="tableblock halign-left valign-top">Orthography</th>
 <th class="tableblock halign-left valign-top">Part of Speech</th>
-<th class="tableblock halign-left valign-top">Pronunciation</th>
+<th class="tableblock halign-left valign-top">Transcription</th>
 </tr>
 </thead>
 <tbody>
@@ -788,14 +850,12 @@ the same orthographic form can lead to different pronunciations:</p>
 </tbody>
 </table>
 <div class="paragraph">
-<p><a href="#_appendix_c_part_of_speech">Appendix C: Part of Speech</a>
+<p><a href="#_app_c">Appendix C: Part of speech</a>
 provides a list of selected PoS codes.</p>
 </div>
 </div>
-</div>
-<div class="sect1">
-<h2 id="_field_3_language_code">Field 3: Language code</h2>
-<div class="sectionbody">
+<div class="sect2">
+<h3 id="_field_3_language_code"><a id="_field_3"></a>Field 3: Language code</h3>
 <div class="paragraph">
 <p>Language codes follow the ISO 639-2 standard (Library of Congress, 2017).
 The language code indicates the intended language of the orthography at
@@ -812,7 +872,7 @@ the time of pronunciation creation.</p>
 <tr>
 <th class="tableblock halign-left valign-top">Orthography</th>
 <th class="tableblock halign-left valign-top">Language Code</th>
-<th class="tableblock halign-left valign-top">Pronunciation</th>
+<th class="tableblock halign-left valign-top">Transcription</th>
 </tr>
 </thead>
 <tbody>
@@ -829,32 +889,34 @@ the time of pronunciation creation.</p>
 </tbody>
 </table>
 <div class="paragraph">
-<p><a href="#_appendix_d_language_codes_examples">Appendix D: Language Codes (Examples)</a>
+<p><a href="#_app_d">Appendix D: Language codes</a>
 provides a list of selected language codes.</p>
 </div>
 </div>
-</div>
-<div class="sect1">
-<h2 id="_field_16_case">Field 16: Case</h2>
-<div class="sectionbody">
+<div class="sect2">
+<h3 id="_field_16_case"><a id="_field_16"></a>Field 16: Case</h3>
 <div class="paragraph">
-<p>This field indicates case sensitivity:
-- <code>1</code> = Case-sensitive
-- <code>0</code> = Not case-sensitive</p>
+<p>This field indicates case sensitivity:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p><code>1</code> = Case-sensitive</p>
+</li>
+<li>
+<p><code>0</code> = Not case-sensitive</p>
+</li>
+</ul>
 </div>
 </div>
-</div>
-<div class="sect1">
-<h2 id="_field_26_id">Field 26: ID</h2>
-<div class="sectionbody">
+<div class="sect2">
+<h3 id="_field_26_id"><a id="_field_26"></a>Field 26: ID</h3>
 <div class="paragraph">
 <p>An internal identifier for each entry.</p>
 </div>
 </div>
-</div>
-<div class="sect1">
-<h2 id="_references">References</h2>
-<div class="sectionbody">
+<div class="sect2">
+<h3 id="_references">References</h3>
 <div class="ulist">
 <ul>
 <li>
@@ -866,17 +928,15 @@ provides a list of selected language codes.</p>
 </ul>
 </div>
 </div>
-</div>
-<div class="sect1">
-<h2 id="_appendix_a_field_information">Appendix A: Field Information</h2>
-<div class="sectionbody">
+<div class="sect2">
+<h3 id="_appendix_a_field_information"><a id="_app_a"></a>Appendix A: Field information</h3>
 <div class="paragraph">
 <p>Bold fields are shared publicly.</p>
 </div>
 <table class="tableblock frame-all grid-all stretch">
 <colgroup>
-<col style="width: 20%;">
 <col style="width: 40%;">
+<col style="width: 20%;">
 <col style="width: 40%;">
 </colgroup>
 <thead>
@@ -888,42 +948,50 @@ provides a list of selected language codes.</p>
 </thead>
 <tbody>
 <tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">0</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>0</strong></p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">orth</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">bjärornas</p></td>
 </tr>
 <tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">1</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>1</strong></p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">pron</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">b j ”ae: . r ,u . rn a s</p></td>
 </tr>
 <tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">2</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>2</strong></p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">posmorph</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">NN UTR PLU DEF GEN</p></td>
 </tr>
 <tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">3</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>3</strong></p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">lang</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">swe</p></td>
 </tr>
 <tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">16</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">4-15</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">internal</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">-</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>16</strong></p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">case</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">0</p></td>
 </tr>
 <tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">26</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">17-25</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">internal</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">-</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>26</strong></p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">id</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">0060097</p></td>
 </tr>
 </tbody>
 </table>
 </div>
-</div>
-<div class="sect1">
-<h2 id="_appendix_b_phoneme_table_base_and_ipa">Appendix B: Phoneme Table (Base and IPA)</h2>
-<div class="sectionbody">
+<div class="sect2">
+<h3 id="_appendix_b_phoneme_table_base_and_ipa"><a id="_app_b"></a>Appendix B: Phoneme table - Base and IPA</h3>
 <table class="tableblock frame-all grid-all stretch">
 <colgroup>
 <col style="width: 33.3333%;">
@@ -939,9 +1007,184 @@ provides a list of selected language codes.</p>
 </thead>
 <tbody>
 <tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Base</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">IPA</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Exempel</p></td>
+</tr>
+<tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock">p</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">p</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">pil</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">b</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">b</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">bil</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">t</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">t</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">bot</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">rt</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">ʈ</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">bort</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">d</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">d</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">bod</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">rd</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">ɖ</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">bord</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">k</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">k</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">kal</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">g</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">ɡ</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">gal</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">f</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">f</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">fal</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">v</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">v</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">val</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">s</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">s</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">sal</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">rs</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">ʂ</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">fors</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">h</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">h</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">hal</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">x</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">ɧ</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">sjal</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">c</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">ɕ</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">tjat</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">m</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">m</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">matt</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">n</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">n</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">natt</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">rn</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">ɳ</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">barn</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">ng</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">ŋ</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">ring</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">r</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">r</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">riv</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">l</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">l</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">liv</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">rl</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">ɭ</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">sorl</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">j</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">j</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">jag</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">w</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">w</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">way (eng)</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">sh</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">ʃ</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">she (eng)</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">zh</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">ʒ</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">measure (eng)</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">z</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">z</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">zebra (eng)</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">dh</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">ð</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">this (eng)</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">th</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">θ</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">thick (eng)</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">rh</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">ɾ</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">road (eng)</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">r0</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">-</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">father (br. eng)</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">rx</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">ʀ</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">rouge (fre)</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">tc</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">t͡ʃ</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">chicken (eng)</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">dj</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">d͡ʒ</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">fudge (eng)</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">xx</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">x</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Bach (ger)</p></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock">i:</p></td>
@@ -949,9 +1192,44 @@ provides a list of selected language codes.</p>
 <td class="tableblock halign-left valign-top"><p class="tableblock">sil</p></td>
 </tr>
 <tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">i</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">ɪ</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">sill</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">ih</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">ɪ̯</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">radio</p></td>
+</tr>
+<tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock">y:</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">yː</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">syl</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">y</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">ʏ</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">syll</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">e:</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">eː</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">sel</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">e</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">e</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">sett</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">eh</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">e̝</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">betona</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">ex</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">ə</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">papper</p></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock">ä:</p></td>
@@ -959,17 +1237,175 @@ provides a list of selected language codes.</p>
 <td class="tableblock halign-left valign-top"><p class="tableblock">säl</p></td>
 </tr>
 <tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">ä</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">ɛ</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">sätt</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">ae:</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">æː</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">när</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">ae</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">æ</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">spärr</p></td>
+</tr>
+<tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock">ö:</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">øː</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">rön</p></td>
 </tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">ö</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">ø</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">rönn</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">oe:</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">œː</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">för</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">oe</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">œ</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">förr</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">u:</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">uː</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">bot</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">u</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">u</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">bott</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">oh</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">o</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">bohem</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">o:</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">oː</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">såt</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">o</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">ɔ</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">sått</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">uu:</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">ʉː</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">sur</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">uu</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">ɵ</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">surr</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">uuh</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">ʉ</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">butik</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">uw:</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">ʊː</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">you</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">uw</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">ʊ</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">would</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">a:</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">ɑː</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">mat</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">a</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">a</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">matt</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">aa:</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">aː</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Zlatan</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">au</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">aʊ</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">paus</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">eu</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">ɛʊ</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">euro</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">ei</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">eɪ</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">way (eng)</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">ai</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">aɪ</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">lie (eng)</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">oi</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">ɔɪ</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">boy (eng)</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">ou</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">əʊ</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">low (eng)</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">eex</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">eə</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">where (eng)</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">iex</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">ɪə</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">here (eng)</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">uex</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">ʊə</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">pure (eng)</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">an</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">ã</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">sans (fre)</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">en</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">ɛ̃</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">pain (fre)</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">on</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">õ</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">pardon (fre)</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">un</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">œ̃</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">lundi (fre)</p></td>
+</tr>
 </tbody>
 </table>
 </div>
-</div>
-<div class="sect1">
-<h2 id="_appendix_c_part_of_speech">Appendix C: Part of Speech</h2>
-<div class="sectionbody">
+<div class="sect2">
+<h3 id="_appendix_c_part_of_speech"><a id="_app_c"></a>Appendix C: Part of speech</h3>
 <div class="paragraph">
 <p>Following (Gustafson-Capková &amp; Hartmann, 2006).</p>
 </div>
@@ -993,14 +1429,104 @@ provides a list of selected language codes.</p>
 <td class="tableblock halign-left valign-top"><p class="tableblock">inte</p></td>
 </tr>
 <tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">DT</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Determiner</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">denna</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">HA</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Interrogative/relative adverb</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">när</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">HD</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Interrogative/relative determiner</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">vilken</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">HP</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Interrogative/relative pronoun</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">som</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">HS</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Interrogative/relative possessive pronoun</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">vars</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">IE</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Infinitive</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">att</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">IN</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Interjection</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">ja</p></td>
+</tr>
+<tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock">JJ</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Adjective</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">glad</p></td>
 </tr>
 <tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">KN</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Conjunction</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">och</p></td>
+</tr>
+<tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock">NN</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Noun</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">pudding</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">PC</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Participle</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">utsänd</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">PL</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Verb particle</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">ut</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">PM</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Proper noun</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Mats</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">PN</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Pronoun</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">hon</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">PP</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Preposition</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">av</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">PS</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Possessive pronoun</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">hennes</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">RG</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Numeral</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">tre</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">RO</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Ordinal</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">tredje</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">SN</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Subjunction</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">att</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">UO</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Foreign word</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">the</p></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock">VB</p></td>
@@ -1010,10 +1536,8 @@ provides a list of selected language codes.</p>
 </tbody>
 </table>
 </div>
-</div>
-<div class="sect1">
-<h2 id="_appendix_d_language_codes_examples">Appendix D: Language Codes (Examples)</h2>
-<div class="sectionbody">
+<div class="sect2">
+<h3 id="_appendix_d_language_codes"><a id="_app_d"></a>Appendix D: Language codes</h3>
 <table class="tableblock frame-all grid-all stretch">
 <colgroup>
 <col style="width: 50%;">
@@ -1031,30 +1555,102 @@ provides a list of selected language codes.</p>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Swedish</p></td>
 </tr>
 <tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">eng</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">English</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">nob</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Norwegian bokmål</p></td>
 </tr>
 <tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">fre</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">French</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">nno</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Norwegien nynorsk</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">dan</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Danish</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">ice</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Icelandic</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">fin</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Finnish</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">eng</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">English</p></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock">ger</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">German</p></td>
 </tr>
 <tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">fre</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">French</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">spa</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Spanish</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">por</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Portuguese</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">dut</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Dutch</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">gre</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Greek</p></td>
+</tr>
+<tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock">rus</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Russian</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">cze</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Czech</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">chi</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Chinese</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">jap</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Japanese</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">kor</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Korean</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">tha</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Thai</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">swa</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Swahili</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">ara</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Arabic</p></td>
 </tr>
 </tbody>
 </table>
 </div>
 </div>
 </div>
+</div>
 <div id="footer">
 <div id="footer-text">
-Last updated 2025-03-04 08:49:29 UTC
+Last updated 2025-04-07 08:41:47 UTC
 </div>
 </div>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.18.3/highlight.min.js"></script>
+<script>
+if (!hljs.initHighlighting.called) {
+  hljs.initHighlighting.called = true
+  ;[].slice.call(document.querySelectorAll('pre.highlight > code[data-lang]')).forEach(function (el) { hljs.highlightBlock(el) })
+}
+</script>
 </body>
 </html>
