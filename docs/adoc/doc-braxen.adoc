@@ -1,14 +1,23 @@
-= Braxen 1.0 Documentation
+:toc: left
+:toclevels: 3
+:imagesdir: ../images
+:source-highlighter: highlightjs
+image::logos/logo-braxen.svg[width=100, float="right"]
+image::logos/logo-braxen.svg[width=100, float="right"]
+image::logos/logo-braxen.svg[width=100, float="right"]
+== Braxen 1.0 Documentation
 
 :author: Swedish Agency for Accessible Media (MTM)
 :license: Apache 2.0
 :url-license: https://www.apache.org/licenses/LICENSE-2.0
+
 // Local variables
 :braxen: Braxen 1.0
 :mtm-1st: Swedish Agency for Accessible Media (MTM)
 :mtm: MTM
 :voc-sbtal: Språkbanken Tal
 :field: Field
+:app: Appendix
 :field-0: Orthography
 :field-0-full: {field} 0: {field-0}
 :field-1: Pronunciation
@@ -21,27 +30,35 @@
 :field-16-full: {field} 16: {field-16}
 :field-26: ID
 :field-26-full: {field} 26: {field-26}
-
+:app-a: {app} A
+:app-a-full: {app} A: Field information
+:app-b: {app} B
+:app-b-full: {app} B: Phoneme table - Base and IPA
+:app-c: {app} C
+:app-c-full: {app} C: Part of speech
+:app-d: {app} D
+:app-d-full: {app} D: Language codes
 :format-base: Base
 
 // 1st para wIll be formatted as abstract by default
+[.lead]
 {braxen} is a Swedish pronunciation dictionary for speech technology, 
 developed by {mtm-1st}. 
 It is made public in cooperation with {voc-sbtal}.
 
-== Structure
+=== Structure
 
 The underlying data for {braxen} is a straight-forward two-dimensional table, with 
 entries for full-form words, abbreviations, and acronyms, and 
 columns ({field}s) for various attributes of these entries.
 
-=== Entries
+==== Entries
 
 An entry in {braxen} is defined by its full-form orthography,
 and several entries with the same orthography is permissable, but 
 only if they differ in another field.
 
-=== {Field} structure
+==== {Field} structure
 
 An entry in {braxen} consists of 27 fields. 
 In its raw, tab-separated form, each field occupies a column, and 
@@ -50,17 +67,17 @@ the order is meaningful, so that columns 0 to 26 have semantics.
 In the current version, only a subset of these fields are shared publicly.
 The structure of the public dictionary remains the same, however, 
 resulting in a number of empty columns
-(see <<_appendix_a_field_information>>).
+(see <<_app_a, {app-a-full}>>).
 
 The most important fields are described in the following.
 
-== {field-0-full}
+=== [[_field_0]]{field-0-full}
 
 The orthography field shows the spelling of the word. 
 
 A considerable amount of pragmatics goes into the orthography field. 
 For example, the most frequent casing is used, as 
-different casings can sometimes indicate different pronunciations (see <<_16_case>>).
+different casings can sometimes indicate different pronunciations (see <<_field_16, {field-16-full}>>).
 
 .Examples
 [cols="1,1,1", options="header"]
@@ -72,13 +89,13 @@ different casings can sometimes indicate different pronunciations (see <<_16_cas
 | BRB | Proper name (acronym) | B R B
 |===
 
-== {field-1-full}
+=== [[_field_1]]{field-1-full}
 
 The format for the phonetic-phonological transcriptions covers 
 Swedish and common foreign phonemes. 
 Here, this fomat is referred to as *{format-base}*.
 
-<<_appendix_b_phoneme_table_base_and_ipa>> provides 
+<<_app_b, {app-b-full}>> provides 
 a conversion table between Base and IPA. 
 Tools for automatic conversion are included in the
 `/p5m/scripts` directory).
@@ -112,7 +129,7 @@ docker run -v "$PWD":/work -it perl -c "/work/p5m/scripts/validate_braxen.pl /wo
 OUTFILE"
 ----
 
-=== Stress
+==== Stress
 
 All {braxen} words have exactly one main stress, 
 which can be either accent 1 or accent 2. 
@@ -128,7 +145,7 @@ Stress is marked immediately before the stressed vowel.
 | Secondary stress | , | bollar, dalbana | /b ”o . l ,a r/, /d ”a: l - b ,a: . n a/
 |===
 
-=== Boundaries
+==== Boundaries
 
 Word boundaries allow multiple main stresses within an expression. 
 
@@ -144,7 +161,7 @@ Word boundaries allow multiple main stresses within an expression.
 
 *The morpheme boundary is optional but can be included when needed.
 
-=== /e/ Sounds
+==== /e/ Sounds
 
 {braxen} distinguishes between four /e/ sounds, 
 mainly reflecting a central Swedish pronunciation.
@@ -159,12 +176,12 @@ mainly reflecting a central Swedish pronunciation.
 | `ex` | Schwa, used in unstressed syllables | bollen | /b ’o . l ex n/
 |===
 
-=== Xenophones (foreign speech sounds)
+==== Xenophones (foreign speech sounds)
 
 The phoneme inventory includes foreign phonemes, 
 so-called xenophones, primarily from English.
 
-== {field-2-full}
+=== [[_field_2]]{field-2-full}
 
 Part of speech and morphological data largely follow 
 the Stockholm-Umeå Corpus (SUC) principles (Gustafson-Capková & Hartmann, 2006). 
@@ -184,10 +201,10 @@ the same orthographic form can lead to different pronunciations:
 | planet | NN NEU SIN DEF NOM | /p l ’a: . n ex t/
 |===
 
-<<_appendix_c_part_of_speech>>
+<<_app_c, {app-c-full}>>
 provides a list of selected PoS codes.
 
-== {field-3-full}
+=== [[_field_3]]{field-3-full}
 
 Language codes follow the ISO 639-2 standard (Library of Congress, 2017). 
 The language code indicates the intended language of the orthography at 
@@ -201,25 +218,26 @@ the time of pronunciation creation.
 | Anne | eng | /’ae n/
 |===
 
-<<_appendix_d_language_codes_examples>> 
+<<_app_d, {app-d-full}>>
 provides a list of selected language codes.
 
-== {field-16-full}
+=== [[_field_16]]{field-16-full}
 
 This field indicates case sensitivity:
 - `1` = Case-sensitive
 - `0` = Not case-sensitive
 
-== {field-26-full}
+=== [[_field_26]]{field-26-full}
+
 
 An internal identifier for each entry.
 
-== References
+=== References
 
 * Gustafson-Capková, S., & Hartmann, B. (2006). *Manual of the Stockholm Umeå Corpus version 2.0*.
 * Library of Congress. (2017). *ISO 639-2 Language Code List*. https://www.loc.gov/standards/iso639-2/php/code_list.php
 
-== Appendix A: Field Information
+=== [[_app_a]]{app-a-full}
 
 Bold fields are shared publicly.
 
@@ -234,7 +252,7 @@ Bold fields are shared publicly.
 | 26 | id | 0060097
 |===
 
-== Appendix B: Phoneme Table (Base and IPA)
+=== [[_app_b]]{app-b-full}
 
 [cols="1,1,1", options="header"]
 |===
@@ -246,7 +264,7 @@ Bold fields are shared publicly.
 | ö: | øː | rön
 |===
 
-== Appendix C: Part of Speech
+=== [[_app_c]]{app-c-full}
 
 Following (Gustafson-Capková & Hartmann, 2006).
 
@@ -259,7 +277,7 @@ Following (Gustafson-Capková & Hartmann, 2006).
 | VB | Verb | kasta
 |===
 
-== Appendix D: Language Codes (Examples)
+=== [[_app_d]]{app-d-full}
 
 [cols="1,1", options="header"]
 |===
