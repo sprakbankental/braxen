@@ -102,12 +102,12 @@ Tools for automatic conversion are included in the
 
 
 .Conversion Tools
-[format=tsv, cols="1,1", options="header"]
+[format=tsv, cols="1,2,3", options="header"]
 |===
-Script,Task
-p5m/scripts/braxen_conversion.pl	Converts {format-base} to IPA
-validate_braxen.pl	Validates {format-base} transcription
-validate_ipa.pl	Validates IPA transcription
+Script	Task	Call
+braxen_conversion.pl	Braxen to IPA(encode) or IPA to Braxen (decode)	perl p5m/scripts/braxen_conversion.pl <encode|decode> <infile> <outfile>
+validate_braxen.pl	Validates Braxen	perl p5m/scripts/validate_braxen.pl <infile> <outfile>
+validate_ipa.pl	Validates IPA	perl p5m/scripts/validate_ipa.pl <infile> <outfile>
 |===
 
 Note that the conversion tools are written in Perl.
@@ -258,38 +258,24 @@ Field	Name	Example
 
 === [[_app_b]]{app-b-full}
 
-[cols="1,1,1", options="header"]
+[format=tsv, cols="1,1,1", options="header"]
 |===
-| Base | IPA | Example
-| p | p | pil
-| i: | iː | sil
-| y: | yː | syl
-| ä: | ɛː | säl
-| ö: | øː | rön
+include::includes/phonemes.tsv[]
 |===
 
 === [[_app_c]]{app-c-full}
 
 Following (Gustafson-Capková & Hartmann, 2006).
 
-[cols="1,2,1", options="header"]
+[format=tsv, cols="1,2,1", options="header"]
 |===
-| Tag | Description | Example
-| AB | Adverb | inte
-| JJ | Adjective | glad
-| NN | Noun | pudding
-| VB | Verb | kasta
+include::includes/pos.tsv[]
 |===
 
 === [[_app_d]]{app-d-full}
 
-[cols="1,1", options="header"]
+[format=tsv, cols="1,1", options="header"]
 |===
-| Code | Language
-| swe | Swedish
-| eng | English
-| fre | French
-| ger | German
-| rus | Russian
+include::includes/langcodes.tsv[]
 |===
 
