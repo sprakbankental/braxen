@@ -1,21 +1,27 @@
-:toc: left
-:toclevels: 3
-:imagesdir: ../images
-:source-highlighter: highlightjs
-image::logos/logo-braxen.svg[width=100, float="right"]
-image::logos/logo-braxen.svg[width=100, float="right"]
-image::logos/logo-braxen.svg[width=100, float="right"]
-== Braxen 1.0 Documentation
+include::./attributes/config.adoc[]
+= {braxen} Documentation
+:author_1:         Christina Tånnander
+:email_1:          tannander@mtm.se
+:firstname_1:      Christina
+:lastname_1:       Tånnander
+:authorinitials_1: CT
+:author_2:         Jens Edlund
+:email_2:          edlund@speech.kth.se
+:firstname_2:      Jens
+:lastname_2:       Edlund
+:authorinitials_2: JE
+:revnumber:        {revision}
+:revdate:          2025-04-24
+:revremark:        Stable release
+:description: Braxen 1.0 documentation
+:keywords: Swedish pronunciation dictionary, Braxen, MTM, Braxen 1.0, \
+speech technology, TTS, text-to-speech
 
 :author: Swedish Agency for Accessible Media (MTM)
 :license: Apache 2.0
 :url-license: https://www.apache.org/licenses/LICENSE-2.0
 
-// Local variables
-:braxen: Braxen 1.0
-:mtm-1st: Swedish Agency for Accessible Media (MTM)
-:mtm: MTM
-:voc-sbtal: Språkbanken Tal
+// Local variables (shared vars in attributes/config.adoc)
 :field: Field
 :app: Appendix
 :field-0: Orthography
@@ -46,19 +52,19 @@ image::logos/logo-braxen.svg[width=100, float="right"]
 developed by {mtm-1st}. 
 It is made public in cooperation with {voc-sbtal}.
 
-=== Structure
+== Structure
 
 The underlying data for {braxen} is a straight-forward two-dimensional table, with 
 entries for full-form words, abbreviations, and acronyms, and 
 columns ({field}s) for various attributes of these entries.
 
-==== Entries
+=== Entries
 
 An entry in {braxen} is defined by its full-form orthography,
 and several entries with the same orthography is permissable, but 
 only if they differ in another field.
 
-==== {Field} structure
+=== {Field} structure
 
 An entry in {braxen} consists of 27 fields. 
 In its raw, tab-separated form, each field occupies a column, and 
@@ -234,12 +240,12 @@ This field indicates case sensitivity:
 
 An internal identifier for each entry.
 
-=== References
+== References
 
 * Gustafson-Capková, S., & Hartmann, B. (2006). *Manual of the Stockholm Umeå Corpus version 2.0*.
 * Library of Congress. (2017). *ISO 639-2 Language Code List*. https://www.loc.gov/standards/iso639-2/php/code_list.php
 
-=== [[_app_a]]{app-a-full}
+== [[_app_a]]{app-a-full}
 
 Bold fields are shared publicly.
 
@@ -256,14 +262,14 @@ Field	Name	Example
 *26*	id	0060097
 |===
 
-=== [[_app_b]]{app-b-full}
+== [[_app_b]]{app-b-full}
 
 [format=tsv, cols="1,1,1", options="header"]
 |===
 include::includes/phonemes.tsv[]
 |===
 
-=== [[_app_c]]{app-c-full}
+== [[_app_c]]{app-c-full}
 
 Following (Gustafson-Capková & Hartmann, 2006).
 
@@ -272,7 +278,7 @@ Following (Gustafson-Capková & Hartmann, 2006).
 include::includes/pos.tsv[]
 |===
 
-=== [[_app_d]]{app-d-full}
+== [[_app_d]]{app-d-full}
 
 [format=tsv, cols="1,1", options="header"]
 |===
