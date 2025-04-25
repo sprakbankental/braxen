@@ -1,0 +1,23 @@
+Tag	Description	Example
+AB	Adverb	inte
+DT	Determiner	denna
+HA	Interrogative/relative adverb	när
+HD	Interrogative/relative determiner	vilken
+HP	Interrogative/relative pronoun	som
+HS	Interrogative/relative possessive pronoun	vars
+IE	Infinitive	att
+IN	Interjection	ja
+JJ	Adjective	glad
+KN	Conjunction	och
+NN	Noun	pudding
+PC	Participle	utsänd
+PL	Verb particle	ut
+PM	Proper noun	Mats
+PN	Pronoun	hon
+PP	Preposition	av
+PS	Possessive pronoun	hennes
+RG	Numeral	tre
+RO	Ordinal	tredje
+SN	Subjunction	att
+UO	Foreign word	the
+VB	Verb	kasta

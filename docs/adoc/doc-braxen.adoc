@@ -1,14 +1,30 @@
-= Braxen 1.0 Documentation
+:doctype: book
+include::./attributes/config.adoc[]
+= {braxen} Documentation
+:author_1:         Christina Tånnander
+:email_1:          tannander@mtm.se
+:firstname_1:      Christina
+:lastname_1:       Tånnander
+:authorinitials_1: CT
+:author_2:         Jens Edlund
+:email_2:          edlund@speech.kth.se
+:firstname_2:      Jens
+:lastname_2:       Edlund
+:authorinitials_2: JE
+:revnumber:        {revision}
+:revdate:          2025-04-24
+:revremark:        Stable release
+:description: Braxen 1.0 documentation
+:keywords: Swedish pronunciation dictionary, Braxen, MTM, Braxen 1.0, \
+speech technology, TTS, text-to-speech
 
 :author: Swedish Agency for Accessible Media (MTM)
-:license: CC BY 4.0
-:url-license: https://creativecommons.org/licenses/by/4.0/legalcode.en
-// Local variables
-:braxen: Braxen 1.0
-:mtm-1st: Swedish Agency for Accessible Media (MTM)
-:mtm: MTM
-:voc-sbtal: Språkbanken Tal
+:license: Apache 2.0
+:url-license: https://www.apache.org/licenses/LICENSE-2.0
+
+// Local variables (shared vars in attributes/config.adoc)
 :field: Field
+:app: Appendix
 :field-0: Orthography
 :field-0-full: {field} 0: {field-0}
 :field-1: Pronunciation
@@ -21,10 +37,18 @@
 :field-16-full: {field} 16: {field-16}
 :field-26: ID
 :field-26-full: {field} 26: {field-26}
-
+:app-a: {app} A
+:app-a-full: {app} A: Field information
+:app-b: {app} B
+:app-b-full: {app} B: Phoneme table - Base and IPA
+:app-c: {app} C
+:app-c-full: {app} C: Part of speech
+:app-d: {app} D
+:app-d-full: {app} D: Language codes
 :format-base: Base
 
 // 1st para wIll be formatted as abstract by default
+[.lead]
 {braxen} is a Swedish pronunciation dictionary for speech technology, 
 developed by {mtm-1st}. 
 It is made public in cooperation with {voc-sbtal}.
@@ -48,54 +72,61 @@ In its raw, tab-separated form, each field occupies a column, and
 the order is meaningful, so that columns 0 to 26 have semantics. 
 
 In the current version, only a subset of these fields are shared publicly.
-The structure of the public dictionary remains the same, hwoever, 
+The structure of the public dictionary remains the same, however, 
 resulting in a number of empty columns
-(see <<_appendix_a_field_information>>).
+(see <<_app_a, {app-a-full}>>).
 
 The most important fields are described in the following.
 
-== {field-0-full}
+=== [[_field_0]]{field-0-full}
 
 The orthography field shows the spelling of the word. 
 
 A considerable amount of pragmatics goes into the orthography field. 
 For example, the most frequent casing is used, as 
-different casings can sometimes indicate different pronunciations (see <<_16_case>>).
+different casings can sometimes indicate different pronunciations (see <<_field_16, {field-16-full}>>).
 
 .Examples
-[cols="1,1,1", options="header"]
+[format=tsv, cols="1,1,1", options="header"]
 |===
-| Orthography | Part of Speech | Pronunciation
-| björn | Noun | /b j ’oe: rn/
-| Björn | Proper name | /b j ’oe: rn/
-| BrB | Proper name (abbreviation) | Brottsbalken
-| BRB | Proper name (acronym) | B R B
+Orthography	Part of Speech	Transcription
+björn	Noun	/b j ’oe: rn/
+Björn	Proper name	/b j ’oe: rn/
+BrB	Proper name (abbreviation)	Brottsbalken
+BRB	Proper name (acronym)	B R B
 |===
 
-== {field-1-full}
+=== [[_field_1]]{field-1-full}
 
 The format for the phonetic-phonological transcriptions covers 
 Swedish and common foreign phonemes. 
 Here, this fomat is referred to as *{format-base}*.
 
-<<_appendix_b_phoneme_table_base_and_ipa>> provides 
+<<_app_b, {app-b-full}>> provides 
 a conversion table between Base and IPA. 
 Tools for automatic conversion are included in the
 `/p5m/scripts` directory).
 
 
 .Conversion Tools
-[cols="1,1", options="header"]
+[format=tsv, cols="1,2,3", options="header"]
 |===
-| Script | Task
-| convertBase2IPA.pl | Converts {format-base} to IPA
-| convertIPA2Base.pl | Converts IPA to {format-base}
-| validateBase.pl | Validates {format-base} transcription
-| validateIPA.pl | Validates IPA transcription
+Script	Task	Call
+braxen_conversion.pl	Braxen to IPA(encode) or IPA to Braxen (decode)	perl p5m/scripts/braxen_conversion.pl <encode|decode> <infile> <outfile>
+validate_braxen.pl	Validates Braxen	perl p5m/scripts/validate_braxen.pl <infile> <outfile>
+validate_ipa.pl	Validates IPA	perl p5m/scripts/validate_ipa.pl <infile> <outfile>
 |===
 
 Note that the conversion tools are written in Perl.
 Using e.g. Docker, they can be used without installing a Perl interpreter.
+
+.Example of conversion using Docker
+Use "encode" for Braxen to IPA format and "decode" for IPA to Braxen format.
+[source,bash]
+----
+cd /braxen/repo/root
+docker run -v "$PWD":/work -it perl -c "/work/p5m/scripts/braxen_conversion.pl ENCODE|DECODE /work/INFILE /work/OUTFILE"
+----
 
 .Example of validation using Docker
 [source,bash]
@@ -105,59 +136,60 @@ docker run -v "$PWD":/work -it perl -c "/work/p5m/scripts/validate_braxen.pl /wo
 OUTFILE"
 ----
 
-=== Stress
+==== Stress
 
-All {braxen}} words have exactly one main stress, 
+All {braxen} words have exactly one main stress, 
 which can be either accent 1 or accent 2. 
 Words with accent 2 also have secondary stress. 
 Stress is marked immediately before the stressed vowel.
 
 .Stress notation examples
-[cols="1,1,1", options="header"]
+[format=tsv, cols="2,1,2,3", options="header"]
 |===
-| Stress | Notation | Example (Transcription)
-| Main stress, accent 1 | ’ | boll (/b ’o l/)
-| Main stress, accent 2 | ” | bollar, dalbana (/b ”o . l ,a r/, /d ”a: l - b ,a: . n a/)
-| Secondary stress | , | bollar, dalbana (/b ”o . l ,a r/, /d ”a: l - b ,a: . n a/)
+Stress	Notation	Example	Transcription
+Main stress accent 1	’	boll	/b ’o l/
+Main stress accent 2	”	bollar, dalbana	/b ”o . l ,a r/, /d ”a: l - b ,a: . n a/
+Secondary stress	,	bollar, dalbana	/b ”o . l ,a r/, /d ”a: l - b ,a: . n a/
 |===
 
-=== Boundaries
+
+==== Boundaries
 
 Word boundaries allow multiple main stresses within an expression. 
 
 .Word boundary examples
-[cols="1,1,1", options="header"]
+[format=tsv, cols="2,1,2,3", options="header"]
 |===
-| Boundary | Notation | Example (Transcription)
-| Word | `|` | berg- och dalbana (/b ’ae rj | ’o: | d ”a: l - b , a: . n a/)
-| Compound | `-` | dalbana (/d ”a: l - b ,a: . n a/)
-| Morpheme* | `~` | transalpin (/t r a n s ~ a l . p 'i: n/)
-| Syllable | `.` | alpin (/a l . p ’i: n/)
+Boundary	Notation	Example	Transcription
+Word	`|`	berg- och dalbana	/b ’ae rj `|` ’o: `|` d ”a: l - b , a: . n a/
+Compound	`-`	dalbana	/d ”a: l - b ,a: . n a/
+Morpheme*	`~`	transalpin	/t r a n s ~ a l . p 'i: n/
+Syllable	`.`	alpin	/a l . p ’i: n/
 |===
 
 *The morpheme boundary is optional but can be included when needed.
 
-=== /e/ Sounds
+==== /e/ Sounds
 
 {braxen} distinguishes between four /e/ sounds, 
 mainly reflecting a central Swedish pronunciation.
 
 ./e/ pronunciations
-[cols="1,2,2", options="header"]
+[format=tsv, cols="1,2,2", options="header"]
 |===
-| Phoneme | Description | Example (Transcription)
-| `e` | Semi-open /e/ sound | sett (/s ’e t/)
-| `ä` | Semi-open /e/ sound (dialectal variation) | sätt (/s ’ä t/)
-| `eh` | Before stressed syllable in unstressed, open syllable | betona (/b eh . t ’u: . n a/)
-| `ex` | Schwa, used in unstressed syllables | bollen (/b ’o . l ex n/)
+Phoneme	Description	Example	Transcription
+`e`	Semi-open /e/ sound	sett (/s ’e t/)
+`ä`	Semi-open /e/ sound (dialectal variation)	sätt	/s ’ä t/
+`eh`	Before stressed syllable in unstressed, open syllable	betona	/b eh . t ’u: . n a/
+`ex`	Schwa, used in unstressed syllables	bollen	/b ’o . l ex n/
 |===
 
-=== Xenophones (foreign speech sounds)
+==== Xenophones (foreign speech sounds)
 
 The phoneme inventory includes foreign phonemes, 
 so-called xenophones, primarily from English.
 
-== {field-2-full}
+=== [[_field_2]]{field-2-full}
 
 Part of speech and morphological data largely follow 
 the Stockholm-Umeå Corpus (SUC) principles (Gustafson-Capková & Hartmann, 2006). 
@@ -168,42 +200,44 @@ Different parts of speech or morphological information for
 the same orthographic form can lead to different pronunciations:
 
 .Part of speech and pronunciation examples
-[cols="1,1,1", options="header"]
+[format=tsv, cols="1,1,1", options="header"]
 |===
-| Orthography | Part of Speech | Pronunciation
-| slutet | NN | /s l ’uu: . t ex t/
-| slutet | JJ | /s l ”uu: . t ,ex t/
-| planet | NN UTR SIN IND NOM | /p l a . n ’e: t/
-| planet | NN NEU SIN DEF NOM | /p l ’a: . n ex t/
+Orthography	Part of Speech	Transcription
+slutet	NN	/s l ’uu: . t ex t/
+slutet	JJ	/s l ”uu: . t ,ex t/
+planet	NN UTR SIN IND NOM	/p l a . n ’e: t/
+planet	NN NEU SIN DEF NOM	/p l ’a: . n ex t/
 |===
 
-<<_appendix_c_part_of_speech>>
+<<_app_c, {app-c-full}>>
 provides a list of selected PoS codes.
 
-== {field-3-full}
+=== [[_field_3]]{field-3-full}
 
 Language codes follow the ISO 639-2 standard (Library of Congress, 2017). 
 The language code indicates the intended language of the orthography at 
 the time of pronunciation creation.
 
 .Examples of different language codes for the same word
-[cols="1,1,1", options="header"]
+[format=tsv, cols="1,1,1", options="header"]
 |===
-| Orthography | Language Code | Pronunciation
-| Anne | swe | /’a n/
-| Anne | eng | /’ae n/
+Orthography	Language Code	Transcription
+Anne	swe	/’a n/
+Anne	eng	/’ae n/
 |===
 
-<<_appendix_d_language_codes_examples>> 
+<<_app_d, {app-d-full}>>
 provides a list of selected language codes.
 
-== {field-16-full}
+=== [[_field_16]]{field-16-full}
 
 This field indicates case sensitivity:
+
 - `1` = Case-sensitive
 - `0` = Not case-sensitive
 
-== {field-26-full}
+=== [[_field_26]]{field-26-full}
+
 
 An internal identifier for each entry.
 
@@ -212,55 +246,43 @@ An internal identifier for each entry.
 * Gustafson-Capková, S., & Hartmann, B. (2006). *Manual of the Stockholm Umeå Corpus version 2.0*.
 * Library of Congress. (2017). *ISO 639-2 Language Code List*. https://www.loc.gov/standards/iso639-2/php/code_list.php
 
-== Appendix A: Field Information
+== [[_app_a]]{app-a-full}
 
 Bold fields are shared publicly.
 
-[cols="1,2,2", options="header"]
+[format=tsv, cols="2,1,2", options="header"]
 |===
-| Field | Name | Example
-| 0 | orth | bjärornas
-| 1 | pron | b j ”ae: . r ,u . rn a s
-| 2 | posmorph | NN UTR PLU DEF GEN
-| 3 | lang | swe
-| 16 | case | 0
-| 26 | id | 0060097
-|===
-
-== Appendix B: Phoneme Table (Base and IPA)
-
-[cols="1,1,1", options="header"]
-|===
-| Base | IPA | Example
-| p | p | pil
-| i: | iː | sil
-| y: | yː | syl
-| ä: | ɛː | säl
-| ö: | øː | rön
+Field	Name	Example
+*0*	orth	bjärornas
+*1*	pron	b j ”ae: . r ,u . rn a s
+*2*	posmorph	NN UTR PLU DEF GEN
+*3*	lang	swe
+4-15	internal	-
+*16*	case	0
+17-25	internal	-
+*26*	id	0060097
 |===
 
-== Appendix C: Part of Speech
+== [[_app_b]]{app-b-full}
+
+[format=tsv, cols="1,1,1", options="header"]
+|===
+include::includes/phonemes.tsv[]
+|===
+
+== [[_app_c]]{app-c-full}
 
 Following (Gustafson-Capková & Hartmann, 2006).
 
-[cols="1,2,1", options="header"]
+[format=tsv, cols="1,2,1", options="header"]
 |===
-| Tag | Description | Example
-| AB | Adverb | inte
-| JJ | Adjective | glad
-| NN | Noun | pudding
-| VB | Verb | kasta
+include::includes/pos.tsv[]
 |===
 
-== Appendix D: Language Codes (Examples)
+== [[_app_d]]{app-d-full}
 
-[cols="1,1", options="header"]
+[format=tsv, cols="1,1", options="header"]
 |===
-| Code | Language
-| swe | Swedish
-| eng | English
-| fre | French
-| ger | German
-| rus | Russian
+include::includes/langcodes.tsv[]
 |===
 

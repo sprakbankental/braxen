@@ -1,0 +1,30 @@
+// NB!! THIS FILE MAY NOT INCLUDE BLANK LINES!
+// --------------------------------------------------------------------
+// ----------------------------------------------------------------------
+// Asciidoctor configuration
+// -------------------------
+// For these pages, we use a ToC as standard
+:toc:     left
+:toclevels: 3
+:title-page:
+// This allows bullets in callouts, among other things
+:icons:   font
+// Style - use this to override asciidoctors style.
+//        it is inlined in the HTML and replaces the default
+//:stylesheet: ../style/sbt-docs-base.css
+// Images are here
+:imagesdir: ../images
+// We use source highlighting
+:source-highlighter: highlightjs
+// Logos - these should be picked up from a different include later on...
+image::logos/logo-braxen.svg[width=100, float="right"]
+image::logos/logo-braxen.svg[width=100, float="right"]
+image::logos/logo-braxen.svg[width=100, float="right"]
+// Shared variables - again, these may be moved out in time
+:braxen: Braxen 1.0
+:revision: 1.0.1
+:mtm-1st: Swedish Agency for Accessible Media (MTM)
+:mtm: MTM
+:voc-sbtal: Språkbanken Tal
+// --------------------------------------------------------------------
+// NB!! LAST LINE OF FILE; DO NOT ADD BLANK LINES AFTER THIS LINE!!

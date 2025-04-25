@@ -1,0 +1,28 @@
+# README
+
+The Braxen documentation is written in modularised AsciiDoc. 
+
+The contents of the docs folder is as follows
+
+docs/
+--adoc/   The documentation source.
+--html/   A HTML rendition of the documents.
+--images/ Image library.
+--pdf/    A PDF rendition of the documentation.
+
+The asciidoc folder contains the documentation proper, 
+amd is the authoritative version in case of discrepancies.
+
+To view the AsciiDoc source:
+
+- GitHub renders AsciiDoc, but will not do includes or 
+  substitutions, so the result is less than enjoyable and 
+	often incomplete.
+- Locally, you can use the AsciiDoctor.js plugin to view
+  the docs directly in your browser. 
+	Editors such as VS Code also have plugins that will
+	let you read previews directly.
+- Install asciidoctor, or run through a Docker image.
+
+But generally it will be easiest to go for the HTML or 
+PDF versions.
