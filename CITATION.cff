@@ -1,0 +1,28 @@
+cff-version: 1.2.0
+message: "If you use Braxen, please cite it as below."
+authors:
+- family-names: "Tånnander"
+  given-names: "Christina"
+  orcid: "https://orcid.org/0000-0002-9659-1532"
+- family-names: "Edlund"
+  given-names: "Jens"
+  orcid: "https://orcid.org/0000-0001-9327-9482"
+title: "Braxen"
+version: 1.0.0
+date-released: 2025-03-05
+url: "https://github.com/sprakbankental/braxen"
+preferred-citation:
+  type: conference-paper
+  authors:
+  - family-names: "Tånnander"
+    given-names: "Christina"
+    orcid: "https://orcid.org/0000-0002-9659-1532"
+  - family-names: "Edlund"
+    given-names: "Jens"
+    orcid: "https://orcid.org/0000-0001-9327-9482"
+  journal: "Proc. NoDaLiDa/Baltic-HLT 2025"
+  month: 3
+  start: 709 # First page number
+  end: 713 # Last page number
+  title: "Braxen 1.0"
+  year: 2025
